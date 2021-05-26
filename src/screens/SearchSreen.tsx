@@ -69,6 +69,7 @@ export const SearchSreen = () => {
               ...globalStyles.globalMargin,
               paddingBottom: 10,
               marginTop: top + 70,
+              color: '#30a7d7',
             }}>
             {term}
           </Text>

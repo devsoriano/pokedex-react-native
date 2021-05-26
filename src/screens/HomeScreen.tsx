@@ -32,8 +32,9 @@ export const HomeScreen = () => {
                 top: top + 20,
                 marginBottom: top + 20,
                 paddingBottom: 10,
+                color: '#30a7d7',
               }}>
-              Pokedex{' '}
+              Pokedex
             </Text>
           }
           renderItem={({item}) => <PokemonCard pokemon={item} />}
