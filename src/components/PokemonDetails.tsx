@@ -3,6 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {PokemonFull, Type} from '../interfaces/pokemonInterfaces';
 import {FadeInImage} from './FadeInImage';
+import {styles} from '../styles/PokemonDetails';
 
 interface Props {
   pokemon: PokemonFull;
@@ -19,7 +20,7 @@ export const PokemonDetails = ({pokemon}: Props) => {
       <View
         style={{
           ...styles.container,
-          marginTop: 370,
+          marginTop: 270,
         }}>
         <Text style={styles.title}>Types</Text>
         <View style={{flexDirection: 'row'}}>
@@ -33,7 +34,7 @@ export const PokemonDetails = ({pokemon}: Props) => {
         </View>
 
         {/*Peso */}
-        <Text style={styles.title}>Peso</Text>
+        <Text style={styles.title}>Weight</Text>
         <Text style={styles.regularText}>{pokemon.weight} kg</Text>
       </View>
 
@@ -48,15 +49,7 @@ export const PokemonDetails = ({pokemon}: Props) => {
           style={styles.basicSprite}
         />
         <FadeInImage
-          uri={pokemon.sprites.back_default}
-          style={styles.basicSprite}
-        />
-        <FadeInImage
           uri={pokemon.sprites.front_shiny}
-          style={styles.basicSprite}
-        />
-        <FadeInImage
-          uri={pokemon.sprites.back_shiny}
           style={styles.basicSprite}
         />
       </ScrollView>
@@ -108,7 +101,7 @@ export const PokemonDetails = ({pokemon}: Props) => {
         </View>
 
         {/*Sprite final */}
-        <View style={{marginBottom: 20, alignItems: 'center'}}>
+        <View style={{marginBottom: 60, alignItems: 'center'}}>
           <FadeInImage
             uri={pokemon.sprites.front_default}
             style={styles.basicSprite}
@@ -118,21 +111,3 @@ export const PokemonDetails = ({pokemon}: Props) => {
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: 20,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginTop: 20,
-  },
-  regularText: {
-    fontSize: 19,
-  },
-  basicSprite: {
-    width: 100,
-    height: 100,
-  },
-});
